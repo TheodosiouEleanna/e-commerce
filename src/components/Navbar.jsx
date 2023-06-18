@@ -9,7 +9,7 @@ const menuItems = [
   { text: "Announcements", href: "/announcements" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ onCartClick }) => {
   return (
     <div className='w-full h-32 shadow-md flex justify-center items-center'>
       <div className=' w-[80%] flex items-center justify-between'>
@@ -19,13 +19,15 @@ const Navbar = () => {
         <ul className='flex h-full justify-end items-center uppercase'>
           {menuItems.map((item) => {
             return (
-              <li className='p-4 text-lg text- font-bold hover:text-[#228B22]'>
+              <li className='p-4 text-lg font-normal hover:font-bold hover:text-[#228B22] transform hover:scale-100'>
                 <Link to={item.href}>{item.text}</Link>
               </li>
             );
           })}
           <li className='m-14 text-xl text-[#0071BD] hover:text-[#3390ce]'>
-            <FaShoppingCart />
+            <button onClick={onCartClick}>
+              <FaShoppingCart />
+            </button>
           </li>
         </ul>
       </div>
