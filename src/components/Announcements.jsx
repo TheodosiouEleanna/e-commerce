@@ -14,8 +14,15 @@ export const Announcements = () => {
       <div className='flex pt-6 px-8'>
         {announcements.map((ann, index) => {
           return (
-            <div className='flex flex-col p-4 w-[34%]'>
-              <img className='object-cover w-80 h-60' src={ann.image} alt='' />
+            <div className='flex flex-col p-6 w-[34%]'>
+              <div className='relative'>
+                <img
+                  className='object-cover w-[21rem] h-60 '
+                  src={ann.image}
+                  alt=''
+                />
+                <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30' />
+              </div>
               <h3 className='mt-8 text-xl font-bold text-[#000000]'>
                 {ann.title}
               </h3>
@@ -44,7 +51,7 @@ export const Announcements = () => {
           );
         })}
       </div>
-      <button className='p-4 m-8 w-48 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
+      <button className='p-4 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
         Learn More
       </button>
     </div>
