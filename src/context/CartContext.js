@@ -44,7 +44,6 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
-  console.log({ state });
 
   const addToCart = (item) => {
     const existingItem = state.cartItems.find(
