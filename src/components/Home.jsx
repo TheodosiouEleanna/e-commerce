@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Announcements } from "./Announcements";
+import HeroGrid from "./HeroGrid";
 
 export const Home = () => {
   // ! FOR DIMOS
@@ -10,15 +11,21 @@ export const Home = () => {
 
   //   !FOR ELEANNA
   // Todo: Create a search bar that will be filtering all the products of the grid by name and category
-  // Todo: Create the cart logic of adding and removing items
   //   Todo: Add the review functionality (0-5 stars)
 
   return (
-    <div className='mt-16'>
-      Home
-      <div>
-        <Link to='/products'>LINK</Link>
+    <>
+      <div className='flex justify-center mt-4'>
+        <HeroGrid />
       </div>
-    </div>
+      <div className='flex mt-16 justify-center'>
+        <div className='xl:w-[60%] md:w-[80%] h-96'>
+          <h2 className='text-xl font-bold'>Most popular</h2>
+        </div>
+      </div>
+      <div className='flex mt-16 justify-center'>
+        <Announcements />
+      </div>
+    </>
   );
 };

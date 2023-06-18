@@ -66,7 +66,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const decreaseQuantity = (itemId) => {
-    debugger;
     const existingItem = state.cartItems.find(
       (cartItem) => cartItem.id === itemId
     );
