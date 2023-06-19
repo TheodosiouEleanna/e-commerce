@@ -29,7 +29,6 @@ function ProductsList() {
   const handleAddToCart = (item) => {
     addToCart(item);
   };
-
   const onSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -42,7 +41,7 @@ function ProductsList() {
             Search for products
           </div>
           <TextField
-            className='h-4 mt-4 '
+            className='h-4 mt-4 border border-[#E9E9E9]'
             onChange={onSearchChange}
             placeholder='Search here...'
           />

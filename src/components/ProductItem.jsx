@@ -17,26 +17,26 @@ const ProductItem = ({ item, handleAddToCart }) => {
           />
           <div className='absolute top-0 left-0 w-full h-full bg-black opacity-10' />
         </div>
-        <div className='flex flex-col items-center pt-4'>
-          <h3 className='text-lg  text-[#0071BD]'>{item.name}</h3>
-          <p>{item.description}</p>
-          <p className='font-bold'>{item.price}$</p>
-        </div>
-        <div className='flex justify-around mt-8'>
-          <button
-            className=' w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
-            onClick={() => handleAddToCart(item)}
-          >
-            Add to Cart
-          </button>
-          <button
-            className='w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
-            onClick={() => {}}
-          >
-            Details
-          </button>
-        </div>
       </Link>
+      <div className='flex flex-col items-center pt-4'>
+        <h3 className='text-lg  text-[#0071BD]'>{item.name}</h3>
+        <p>{item.description}</p>
+        <p className='font-bold'>{item.price}$</p>
+      </div>
+      <div className='flex justify-around mt-8'>
+        <button
+          className=' w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
+          onClick={() => handleAddToCart(item)}
+        >
+          Add to Cart
+        </button>
+        <button
+          className='w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
+          onClick={() => {}}
+        >
+          Details
+        </button>
+      </div>
     </div>
   );
 };

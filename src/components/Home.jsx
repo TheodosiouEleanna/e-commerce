@@ -10,12 +10,11 @@ export const Home = () => {
   //   Todo: You could also create the contact form in the end of the home page
 
   //   !FOR ELEANNA
-  // Todo: Create a search bar that will be filtering all the products of the grid by name and category
+  // Todo: Debounce with loader for search
   //   Todo: Add the review functionality (0-5 stars)
-
   return (
     <>
-      <div className='flex justify-center mt-4'>
+      <div className={`flex justify-center mt-4 `}>
         <HeroGrid />
       </div>
       <div className='flex mt-16 justify-center'>

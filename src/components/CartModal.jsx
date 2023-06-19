@@ -19,6 +19,8 @@ const CartModal = ({ showCart, onClose }) => {
     return total + item.quantity;
   }, 0);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../context/CartContext";
@@ -10,17 +10,47 @@ const menuItems = [
   { text: "Announcements", href: "/announcements" },
 ];
 
-const Navbar = ({ onCartClick }) => {
+const Navbar = ({ showCart, onCartClick }) => {
+  const [sticky, setSticky] = useState(false);
   const { cartItems } = useContext(CartContext);
+
   const totalQuantity = cartItems.reduce((total, item) => {
     return total + item.quantity;
   }, 0);
 
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <div className='w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF]'>
+    <div
+      //   className='w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF]'
+      className={`  w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF] ${
+        !showCart && sticky ? "fixed top-0 z-50 animate-expand-height" : " "
+      }`}
+    >
       <div className=' w-[60%] h-full flex items-center justify-between'>
         <div className='w-32 pl-4'>
-          <img src='./LOGO.jpg' alt='logo' />
+          <img src='./LOGO.jpg' alt='logo' onClick={scrollToTop} />
         </div>
         <ul className='flex h-full justify-end items-center uppercase'>
           {menuItems.map((item) => {

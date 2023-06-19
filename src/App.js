@@ -4,7 +4,7 @@ import CartModal from "./components/CartModal";
 import { Home } from "./components/Home";
 import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
-import Products from "./components/ProductsList";
+import ProductsList from "./components/ProductsList";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
@@ -17,14 +17,15 @@ function App() {
   const onCloseCart = () => {
     setShowCart(false);
   };
+
   return (
     <CartProvider>
       <Router>
-        <Navbar onCartClick={onCartClick} />
+        <Navbar showCart={showCart} onCartClick={onCartClick} />
         {showCart && <CartModal showCart={showCart} onClose={onCloseCart} />}
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
+          <Route path='/products' element={<ProductsList />} />
           <Route path='/products/:productId' element={<ProductPage />} />
           <Route path='/sales' element={<Home />} />
           <Route path='/announcements' element={<Home />} />

@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
   cartItems: [],
+  stickyNav: false,
 };
 
 const cartReducer = (state, action) => {

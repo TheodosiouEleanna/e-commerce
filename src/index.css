@@ -14,3 +14,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@keyframes expand-height {
+  from {
+    height: 0;
+    opacity: 0.5;
+  }
+  to {
+    height: 8rem;
+    opacity: 1;
+  }
+}
+
+.animate-expand-height {
+  animation-name: expand-height;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
