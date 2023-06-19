@@ -51,7 +51,7 @@ export const Announcements = () => {
           );
         })}
       </div>
-      <button className='p-4 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
+      <button className='p-2 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
         Learn More
       </button>
     </div>

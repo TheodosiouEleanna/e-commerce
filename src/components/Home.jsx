@@ -20,7 +20,7 @@ export const Home = () => {
       </div>
       <div className='flex mt-16 justify-center'>
         <div className='xl:w-[60%] md:w-[80%] h-96'>
-          <h2 className='text-xl font-bold'>Most popular</h2>
+          <h2 className='text-xl font-bold text-[#0071BD]'>Most popular</h2>
         </div>
       </div>
       <div className='flex mt-16 justify-center'>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CartModal from "./components/CartModal";
 import { Home } from "./components/Home";
 import Navbar from "./components/Navbar";
+import ProductPage from "./components/ProductPage";
 import Products from "./components/ProductsList";
 import { CartProvider } from "./context/CartContext";
 
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/products/:productId' element={<ProductPage />} />
           <Route path='/sales' element={<Home />} />
           <Route path='/announcements' element={<Home />} />
         </Routes>

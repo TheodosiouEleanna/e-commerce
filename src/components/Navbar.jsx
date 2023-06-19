@@ -17,7 +17,7 @@ const Navbar = ({ onCartClick }) => {
   }, 0);
 
   return (
-    <div className='w-full h-32 shadow-md flex justify-center items-center'>
+    <div className='w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF]'>
       <div className=' w-[60%] h-full flex items-center justify-between'>
         <div className='w-32 pl-4'>
           <img src='./LOGO.jpg' alt='logo' />
@@ -25,7 +25,7 @@ const Navbar = ({ onCartClick }) => {
         <ul className='flex h-full justify-end items-center uppercase'>
           {menuItems.map((item) => {
             return (
-              <li className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce]'>
+              <li className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce] hover:underline'>
                 <Link to={item.href}>{item.text}</Link>
               </li>
             );
