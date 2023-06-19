@@ -6,10 +6,10 @@ const ProductItem = ({ item, handleAddToCart }) => {
   return (
     <div
       key={item.id}
-      className='p-8 m-4 pt-0 flex flex-col h-[25rem] border bg-[#FFFFFF] border-[#E9E9E9] hover:border-[#228B22]'
+      className='m-4 p-8 pt-0 flex flex-col h-[26rem] border bg-[#FFFFFF] border-[#E9E9E9] hover:border-[#228B22]'
     >
       <Link to={`/products/${item.id}`}>
-        <div className='flex justify-center h-[15rem] relative'>
+        <div className='flex justify-center h-[16rem] relative'>
           <img
             src={item.image}
             alt='product1'

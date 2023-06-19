@@ -36,7 +36,7 @@ function ProductsList() {
   console.log(searchTerm);
   return (
     <div className='flex justify-center  mb-48'>
-      <div className=' xl:w-[60%] md:w-[80%]'>
+      <div className=' xl:w-[60%] lg:w-[80%] md:w-[80%]'>
         <div className='flex justify-center flex-col items-center m-8'>
           <div className='text-xl font-bold text-[#0071BD]'>
             Search for products
@@ -47,7 +47,6 @@ function ProductsList() {
             placeholder='Search here...'
           />
         </div>
-        <h2>Product List</h2>
         <ul className='grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 '>
           {filteredProducts.length ? (
             filteredProducts.map((item) => (
