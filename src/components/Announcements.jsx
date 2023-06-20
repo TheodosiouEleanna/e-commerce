@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { announcements } from "../productsData";
+import { scrollToTop } from "./Navbar";
 
 export const Announcements = () => {
   const [expanded, setExpanded] = useState({});
@@ -51,9 +53,11 @@ export const Announcements = () => {
           );
         })}
       </div>
-      <button className='p-2 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
-        Learn More
-      </button>
+      <Link to='/announcements' onClick={() => scrollToTop()}>
+        <button className='p-2 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
+          Learn More
+        </button>
+      </Link>
     </div>
   );
 };

@@ -8,7 +8,8 @@ const CartItem = ({ item }) => {
         <div>
           <h3 className='text-lg  hover:text-[#228B22] '>{item.name}</h3>
           <p className='text-sm text-gray-500'>
-            Price: <span className='font-bold'>{item.price}</span>
+            Price:
+            <span className='font-bold text-[#0071BD]'> {item.price}</span>
           </p>
         </div>
       </div>

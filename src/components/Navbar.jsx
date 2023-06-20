@@ -10,6 +10,13 @@ const menuItems = [
   { text: "Announcements", href: "/announcements" },
 ];
 
+export const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const Navbar = ({ showCart, onCartClick }) => {
   const [sticky, setSticky] = useState(false);
   const { cartItems } = useContext(CartContext);
@@ -25,12 +32,6 @@ const Navbar = ({ showCart, onCartClick }) => {
       setSticky(false);
     }
   };
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -42,43 +43,47 @@ const Navbar = ({ showCart, onCartClick }) => {
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <div
-      //   className='w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF]'
-      className={`  w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF] ${
-        !showCart && sticky ? "fixed top-0 z-50 animate-expand-height" : " "
-      }`}
-    >
-      <div className=' w-[60%] h-full flex items-center justify-between'>
-        <div className='w-32 pl-4'>
-          <img src='./LOGO.jpg' alt='logo' onClick={scrollToTop} />
+    <>
+      {sticky && <div className='w-full h-32'></div>}
+      <div
+        className={`  w-full h-32 shadow-md flex justify-center items-center bg-[#FFFFFF] ${
+          !showCart && sticky ? "fixed top-0 z-50 animate-expand-height" : " "
+        }`}
+      >
+        <div className=' w-[60%] h-full flex items-center justify-between'>
+          <div className='w-32 pl-4'>
+            <img src='./LOGO.jpg' alt='logo' onClick={scrollToTop} />
+          </div>
+          <ul className='flex h-full justify-end items-center uppercase'>
+            {menuItems.map((item) => {
+              return (
+                <li className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce] hover:underline'>
+                  <Link to={item.href} onClick={() => scrollToTop()}>
+                    {item.text}
+                  </Link>
+                </li>
+              );
+            })}
+            <li
+              className={
+                totalQuantity > 0
+                  ? "m-14 mt-8 text-[#0071BD] hover:text-[#3390ce] text-xl"
+                  : "m-14 text-[#0071BD] hover:text-[#3390ce] text-xl"
+              }
+            >
+              <button onClick={onCartClick}>
+                {totalQuantity > 0 && (
+                  <span className='flex justify-center items-center text-sm w-4 h-4 bg-[#228B22] text-white ml-4 rounded-full'>
+                    {totalQuantity}
+                  </span>
+                )}
+                <FaShoppingCart />
+              </button>
+            </li>
+          </ul>
         </div>
-        <ul className='flex h-full justify-end items-center uppercase'>
-          {menuItems.map((item) => {
-            return (
-              <li className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce] hover:underline'>
-                <Link to={item.href}>{item.text}</Link>
-              </li>
-            );
-          })}
-          <li
-            className={
-              totalQuantity > 0
-                ? "m-14 mt-8 text-[#0071BD] hover:text-[#3390ce] text-xl"
-                : "m-14 text-[#0071BD] hover:text-[#3390ce] text-xl"
-            }
-          >
-            <button onClick={onCartClick}>
-              {totalQuantity > 0 && (
-                <span className='flex justify-center items-center text-sm w-4 h-4 bg-[#228B22] text-white ml-4 rounded-full'>
-                  {totalQuantity}
-                </span>
-              )}
-              <FaShoppingCart />
-            </button>
-          </li>
-        </ul>
       </div>
-    </div>
+    </>
   );
 };
 

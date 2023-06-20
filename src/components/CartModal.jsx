@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { FaTimes } from "react-icons/fa";
 import CartItem from "./CartItem";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 
 const CartModal = ({ showCart, onClose }) => {
   const modalRef = useRef(null);
@@ -74,17 +75,27 @@ const CartModal = ({ showCart, onClose }) => {
             </ul>
           )}
         </div>
-        <div className='absolute w-96 bottom-0 flex justify-between items-center p-8 text-xl text-[#0071BD] font-bold'>
+        <div className='absolute w-96 bottom-0 flex justify-between items-center p-8 text-xl font-bold'>
           <div>
             Subtotal:
-            <span className='font-normal text-lg text-gray-500 px-2'>
+            <span className='font-bold text-lg text-[#0071BD]  px-2'>
               {totalAmount}
             </span>
           </div>
           <span className=' font-normal text-lg text-slate-950'>
-            <button className='border px-4 py-2 font-bold hover:bg-[#228B22] hover:text-white'>
-              Go to checkout
-            </button>
+            <Link to='/checkout'>
+              <button
+                className={`border px-4 py-2 font-bold  text-[#0071BD]  ${
+                  cartItems.length === 0
+                    ? "opacity-60 "
+                    : "hover:bg-[#228B22] hover:text-white"
+                }`}
+                disabled={cartItems.length === 0}
+                onClick={() => onClose()}
+              >
+                Go to checkout
+              </button>
+            </Link>
           </span>
         </div>
       </div>

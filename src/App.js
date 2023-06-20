@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CartModal from "./components/CartModal";
+import CheckoutPage from "./components/Checkout";
 import { Home } from "./components/Home";
 import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
@@ -9,6 +10,8 @@ import { CartProvider } from "./context/CartContext";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
+
+  // Todo: Add cart to local storage
 
   const onCartClick = () => {
     setShowCart((prev) => !prev);
@@ -27,8 +30,9 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route path='/products' element={<ProductsList />} />
           <Route path='/products/:productId' element={<ProductPage />} />
-          <Route path='/sales' element={<Home />} />
+          <Route path='/sales' element={<ProductsList />} />
           <Route path='/announcements' element={<Home />} />
+          <Route path='/checkout' element={<CheckoutPage />} />
         </Routes>
       </Router>
     </CartProvider>
