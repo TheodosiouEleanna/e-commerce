@@ -93,14 +93,15 @@ function ProductsList() {
         <div className='flex justify-center items-center'>
           {categories.map((category) => {
             return (
-              <button
-                key={category}
-                onClick={() => onCategoryClick(category)}
-                className='group relative transition-colors duration-200 px-4 py-2 m-2 border border-[#E9E9E9] bg-white font-bold hover:border-[#228B22] hover:cursor-pointer'
-              >
-                <h3>{category}</h3>
-                <span className='absolute inset-0 bg-[#d3d3d3] opacity-0 group-hover:opacity-20 transition-opacity duration-200 '></span>
-              </button>
+              <div key={category}>
+                <button
+                  onClick={() => onCategoryClick(category)}
+                  className='group relative transition-colors duration-200 px-4 py-2 m-2 border border-[#E9E9E9] bg-white font-bold hover:border-[#228B22] hover:cursor-pointer'
+                >
+                  <h3>{category}</h3>
+                  <span className='absolute inset-0 bg-[#d3d3d3] opacity-0 group-hover:opacity-20 transition-opacity duration-200 '></span>
+                </button>
+              </div>
             );
           })}
         </div>

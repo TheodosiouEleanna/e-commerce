@@ -51,7 +51,7 @@ const Navbar = ({ showCart, onCartClick }) => {
         }`}
       >
         <div className=' w-[60%] h-full flex items-center justify-between'>
-          <div className='w-32 pl-4'>
+          <div className='w-28 pl-4'>
             <img src='/LOGO.jpg' alt='logo' onClick={scrollToTop} />
           </div>
           <ul className='flex h-full justify-end items-center uppercase'>

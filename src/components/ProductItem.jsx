@@ -24,21 +24,23 @@ const ProductItem = ({ item, handleAddToCart }) => {
             </div>
           )}
         </div>
-      </Link>
-      <div className='flex flex-col items-center pt-4'>
-        <h3 className='text-lg  text-[#0071BD]'>{item.name}</h3>
-        <p>{item.description}</p>
-        <div className='flex '>
-          <p className={`font-bold mx-2 ${isSales ? "line-through" : ""}`}>
-            {item.price}$
-          </p>
-          {isSales && (
-            <p className='font-bold mx-2 text-[#228B22]'>
-              {item.price - (Math.floor(Math.random() * 11) + 5)}$
+        <div className='flex flex-col items-center pt-4'>
+          <h3 className='text-lg  text-[#0071BD] hover:underline'>
+            {item.name}
+          </h3>
+          <p>{item.description}</p>
+          <div className='flex '>
+            <p className={`font-bold mx-2 ${isSales ? "line-through" : ""}`}>
+              {item.price}$
             </p>
-          )}
+            {isSales && (
+              <p className='font-bold mx-2 text-[#228B22]'>
+                {item.price - (Math.floor(Math.random() * 11) + 5)}$
+              </p>
+            )}
+          </div>
         </div>
-      </div>
+      </Link>
       <div className='flex justify-around mt-8'>
         <button
           className=' w-24 border bg-[#E9E9E9] text-sm font-bold hover:bg-[#228B22] hover:text-white'

@@ -11,8 +11,9 @@ import { CartProvider } from "./context/CartContext";
 function App() {
   const [showCart, setShowCart] = useState(false);
 
-  // Todo: Add cart to local storage
-
+  //Todo: Add cart to local storage
+  //Todo: Footer
+  //Todo:  Form
   const onCartClick = () => {
     setShowCart((prev) => !prev);
   };
