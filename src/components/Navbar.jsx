@@ -52,12 +52,16 @@ const Navbar = ({ showCart, onCartClick }) => {
       >
         <div className=' w-[60%] h-full flex items-center justify-between'>
           <div className='w-32 pl-4'>
-            <img src='./LOGO.jpg' alt='logo' onClick={scrollToTop} />
+            <img src='/LOGO.jpg' alt='logo' onClick={scrollToTop} />
           </div>
           <ul className='flex h-full justify-end items-center uppercase'>
-            {menuItems.map((item) => {
+            {menuItems.map((item, index) => {
+              const key = `${item.id}_${index}`;
               return (
-                <li className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce] hover:underline'>
+                <li
+                  key={key}
+                  className='p-4 text-lg text-[#228B22] font-bold hover:text-[#3390ce] hover:underline'
+                >
                   <Link to={item.href} onClick={() => scrollToTop()}>
                     {item.text}
                   </Link>

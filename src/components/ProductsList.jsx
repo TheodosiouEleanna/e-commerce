@@ -94,6 +94,7 @@ function ProductsList() {
           {categories.map((category) => {
             return (
               <button
+                key={category}
                 onClick={() => onCategoryClick(category)}
                 className='group relative transition-colors duration-200 px-4 py-2 m-2 border border-[#E9E9E9] bg-white font-bold hover:border-[#228B22] hover:cursor-pointer'
               >
@@ -107,7 +108,11 @@ function ProductsList() {
         {!loading && (
           <ul className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 pt-4'>
             {(isSales ? salesProducts : filteredProducts).map((item) => (
-              <ProductItem item={item} handleAddToCart={handleAddToCart} />
+              <ProductItem
+                key={item.id}
+                item={item}
+                handleAddToCart={handleAddToCart}
+              />
             ))}
           </ul>
         )}

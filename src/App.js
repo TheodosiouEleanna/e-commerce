@@ -23,18 +23,16 @@ function App() {
 
   return (
     <CartProvider>
-      <Router>
-        <Navbar showCart={showCart} onCartClick={onCartClick} />
-        {showCart && <CartModal showCart={showCart} onClose={onCloseCart} />}
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/products' element={<ProductsList />} />
-          <Route path='/products/:productId' element={<ProductPage />} />
-          <Route path='/sales' element={<ProductsList />} />
-          <Route path='/announcements' element={<Home />} />
-          <Route path='/checkout' element={<CheckoutPage />} />
-        </Routes>
-      </Router>
+      <Navbar showCart={showCart} onCartClick={onCartClick} />
+      {showCart && <CartModal showCart={showCart} onClose={onCloseCart} />}
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='products' element={<ProductsList />} />
+        <Route path='products/:id' element={<ProductPage />} />
+        <Route path='sales' element={<ProductsList />} />
+        <Route path='announcements' element={<Home />} />
+        <Route path='checkout' element={<CheckoutPage />} />
+      </Routes>
     </CartProvider>
   );
 }

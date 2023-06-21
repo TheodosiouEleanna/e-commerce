@@ -5,7 +5,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 10,
-    image: "./photo-4.jpg",
+    image: "/images/photo-4.jpg",
     category: "Soaps",
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 15,
-    image: "./photo-2.jpg",
+    image: "/images/photo-2.jpg",
     category: "Moisturizers",
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 20,
-    image: "./photo-9.jpg",
+    image: "/images/photo-9.jpg",
     category: "Skincare",
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 25,
-    image: "./photo-5.jpg",
+    image: "/images/photo-5.jpg",
     category: "Skincare",
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 30,
-    image: "./photo-6.jpg",
+    image: "/images/photo-6.jpg",
     category: "Perfumes",
   },
   {
@@ -50,7 +50,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 35,
-    image: "./photo-3.jpg",
+    image: "/images/photo-3.jpg",
     category: "Essential oils",
   },
   {
@@ -59,7 +59,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 40,
-    image: "./photo-1.jpg",
+    image: "/images/photo-1.jpg",
     category: "Serums",
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 45,
-    image: "./photo-8.jpg",
+    image: "/images/photo-8.jpg",
     category: "Sets",
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 50,
-    image: "./photo-7.jpg",
+    image: "/images/photo-7.jpg",
     category: "Sets",
   },
   {
@@ -86,7 +86,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 50,
-    image: "./photo-10.jpg",
+    image: "/images/photo-10.jpg",
     category: "Serums",
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 20,
-    image: "./photo-11.jpg",
+    image: "/images/photo-11.jpg",
     category: "Essential oils",
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 15,
-    image: "./photo-12.jpg",
+    image: "/images/photo-12.jpg",
     category: "Skincare",
   },
   {
@@ -113,7 +113,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 12,
-    image: "./photo-13.jpg",
+    image: "/images/photo-13.jpg",
     category: "Skincare",
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 35,
-    image: "./photo-14.jpg",
+    image: "/images/photo-14.jpg",
     category: "",
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 16,
-    image: "./photo-15.jpg",
+    image: "/images/photo-15.jpg",
     category: "Soaps",
   },
   {
@@ -140,7 +140,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 16,
-    image: "./photo-16.jpg",
+    image: "/images/photo-16.jpg",
     category: "Sets",
   },
   {
@@ -149,7 +149,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 16,
-    image: "./photo-17.jpg",
+    image: "/images/photo-17.jpg",
     category: "",
   },
   {
@@ -158,7 +158,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 16,
-    image: "./photo-18.jpg",
+    image: "/images/photo-18.jpg",
     category: "Moisturizers",
   },
   {
@@ -167,7 +167,7 @@ export const products = [
     quantity: 1,
     sale: false,
     price: 16,
-    image: "./photo-19.jpg",
+    image: "/images/photo-19.jpg",
     category: "Perfumes",
   },
   {
@@ -176,7 +176,7 @@ export const products = [
     quantity: 1,
     sale: true,
     price: 16,
-    image: "./photo-20.jpg",
+    image: "/images/photo-20.jpg",
     category: "Moisturizers",
   },
 ];
@@ -185,42 +185,42 @@ export const announcements = [
   {
     id: 1,
     title: "Introducing Our New Natural Skincare Line",
-    image: "./photo-6.jpg",
+    image: "/images/photo-6.jpg",
     description:
       "We're excited to announce the launch of our brand-new natural skincare line, carefully crafted to nourish and rejuvenate your skin with the power of nature. Our products are formulated with high-quality, plant-based ingredients, free from harsh chemicals and artificial additives.",
   },
   {
     id: 2,
     title: "Discover the Benefits of Natural Skincare",
-    image: "./photo-5.jpg",
+    image: "/images/photo-5.jpg",
     description:
       'Experience the transformative benefits of our natural skincare products, designed to enhance your skin"s health and radiance. From gentle cleansers and hydrating moisturizers to luxurious facial oils and soothing masks, our range offers a comprehensive solution for your skincare needs.',
   },
   {
     id: 3,
     title: "Embrace the Power of Nature",
-    image: "./photo-4.jpg",
+    image: "/images/photo-4.jpg",
     description:
       "At our core, we believe in harnessing the power of nature to create effective and sustainable skincare solutions. We carefully select botanical extracts, plant oils, and essential oils known for their beneficial properties, ensuring that each product is both effective and safe for your skin.",
   },
   //   {
   //     id: 4,
   //     title: "Cruelty-Free and Environmentally Conscious",
-  //     image: "./photo-6.jpg",
+  //     image: "/images/photo-6.jpg",
   //     description:
   //       "We are committed to cruelty-free practices and never test our products on animals. Additionally, we strive to minimize our environmental footprint by using eco-friendly packaging materials and supporting sustainable sourcing practices.",
   //   },
   //   {
   //     id: 5,
   //     title: "Join Our Skincare Community",
-  //     image: "./photo-6.jpg",
+  //     image: "/images/photo-6.jpg",
   //     description:
   //       "We invite you to join our skincare community and embark on a journey to healthier, more radiant skin. Stay tuned for exciting updates, exclusive offers, and expert skincare tips from our team of natural beauty enthusiasts.",
   //   },
   //   {
   //     id: 6,
   //     title: "Experience the Difference",
-  //     image: "./photo-6.jpg",
+  //     image: "/images/photo-6.jpg",
   //     description:
   //       "Experience the transformative power of natural skincare. Explore our range of products and discover the joy of healthy, glowing skin. Shop online or visit our store to experience the difference of our natural skincare line.",
   //   },

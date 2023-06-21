@@ -1,8 +1,12 @@
 import { Counter } from "./Counter";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, key }) => {
+  console.log("item.image", item.image);
   return (
-    <div className='flex flex-col items-start justify-between py-8 px-4 border-y'>
+    <div
+      key={key}
+      className='flex flex-col items-start justify-between py-8 px-4 border-y'
+    >
       <div className='flex'>
         <img src={item.image} alt={item.name} className='w-32 mr-4' />
         <div>
