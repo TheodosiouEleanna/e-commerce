@@ -25,10 +25,9 @@ const ProductItem = ({ item, handleAddToCart }) => {
           )}
         </div>
         <div className='flex flex-col items-center pt-4'>
-          <h3 className='text-lg  text-[#0071BD] hover:underline'>
+          <h3 className='text-base   text-[#0071BD] hover:underline'>
             {item.name}
           </h3>
-          <p>{item.description}</p>
           <div className='flex '>
             <p className={`font-bold mx-2 ${isSales ? "line-through" : ""}`}>
               {item.price}$

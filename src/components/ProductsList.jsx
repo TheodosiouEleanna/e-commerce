@@ -24,15 +24,17 @@ function ProductsList() {
   const [loading, setLoading] = useState(false);
 
   const filteredProducts = useMemo(() => {
-    const filtered = products.filter((product) => {
-      const nameMatch = product.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      const categoryMatch = product.category
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      return nameMatch || categoryMatch;
-    });
+    const filtered = products
+      .filter((product) => {
+        const nameMatch = product.name
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+        const categoryMatch = product.category
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+        return nameMatch || categoryMatch;
+      })
+      .filter((p) => !p.sale);
     if (filtered.length) {
       return filtered;
     }

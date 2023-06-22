@@ -1,15 +1,30 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import { Counter } from "./Counter";
 
 const CartItem = ({ item, key }) => {
+  const { toggleCart } = useContext(CartContext);
   return (
     <div
       key={key}
       className='flex flex-col items-start justify-between py-8 px-4 border-y'
     >
       <div className='flex'>
-        <img src={item.image} alt={item.name} className='w-32 mr-4' />
+        <img
+          src={item.image}
+          alt={item.name}
+          className='object-cover w-32 h-32 mr-4'
+        />
         <div>
-          <h3 className='text-lg  hover:text-[#228B22] '>{item.name}</h3>
+          <Link to={`/products/${item.id}`}>
+            <h3
+              className='text-base  hover:text-[#228B22] '
+              onClick={() => toggleCart()}
+            >
+              {item.name}
+            </h3>
+          </Link>
           <p className='text-sm text-gray-500'>
             Price:
             <span className='font-bold text-[#0071BD]'> {item.price}</span>
