@@ -22,6 +22,7 @@ function ProductsList() {
   const { addToCart } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showSnackbar, setShowSnackbar] = useState(false);
 
   const filteredProducts = useMemo(() => {
     const filtered = products
@@ -51,7 +52,12 @@ function ProductsList() {
   }, []);
 
   const handleAddToCart = (item) => {
+    setShowSnackbar(true);
     addToCart(item);
+
+    setTimeout(() => {
+      setShowSnackbar(false);
+    }, 2000);
   };
 
   const debouncedSearch = (query) => {
@@ -125,6 +131,11 @@ function ProductsList() {
           </div>
         )}
       </div>
+      {showSnackbar && (
+        <div className='bg-[#228B22] text-white px-4 py-2 absolute bottom-4 left-1/2 transform -translate-x-1/2'>
+          Product added to cart!
+        </div>
+      )}
     </div>
   );
 }
