@@ -1,7 +1,6 @@
 import { Counter } from "./Counter";
 
 const CartItem = ({ item, key }) => {
-  console.log("item.image", item.image);
   return (
     <div
       key={key}

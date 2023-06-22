@@ -6,10 +6,10 @@ import CartItem from "./CartItem";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
-const CartModal = ({ showCart, onClose }) => {
+const CartModal = () => {
+  const { cartItems, showCart, toggleCart } = useContext(CartContext);
   const modalRef = useRef(null);
   const [initialized, setInitialized] = useState(false);
-  const { cartItems } = useContext(CartContext);
 
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -20,12 +20,17 @@ const CartModal = ({ showCart, onClose }) => {
     return total + item.quantity;
   }, 0);
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        onClose();
+      console.log({ eventTarget: event.target });
+      console.log({ modalRef });
+      if (
+        modalRef.current !== null &&
+        !modalRef.current.contains(event.target) &&
+        event.target.tagName !== "svg" &&
+        !event.target.closest("svg")
+      ) {
+        toggleCart();
       }
     };
 
@@ -37,7 +42,7 @@ const CartModal = ({ showCart, onClose }) => {
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
-  }, [showCart, onClose]);
+  }, [showCart, toggleCart]);
 
   if (!initialized || !showCart) {
     return null;
@@ -55,7 +60,7 @@ const CartModal = ({ showCart, onClose }) => {
       >
         <div className='px-4 flex justify-end'>
           <button
-            onClick={onClose}
+            onClick={toggleCart}
             className=' px-4 py-4 text-2xl text-[#0071BD] hover:text-[#3390ce]'
           >
             <FaTimes />
@@ -91,7 +96,7 @@ const CartModal = ({ showCart, onClose }) => {
                     : "hover:bg-[#228B22] hover:text-white"
                 }`}
                 disabled={cartItems.length === 0}
-                onClick={() => onClose()}
+                onClick={toggleCart}
               >
                 Go to checkout
               </button>

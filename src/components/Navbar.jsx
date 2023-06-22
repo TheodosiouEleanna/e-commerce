@@ -17,9 +17,9 @@ export const scrollToTop = () => {
   });
 };
 
-const Navbar = ({ showCart, onCartClick }) => {
+const Navbar = () => {
   const [sticky, setSticky] = useState(false);
-  const { cartItems } = useContext(CartContext);
+  const { showCart, cartItems, toggleCart } = useContext(CartContext);
 
   const totalQuantity = cartItems.reduce((total, item) => {
     return total + item.quantity;
@@ -75,7 +75,7 @@ const Navbar = ({ showCart, onCartClick }) => {
                   : "m-14 text-[#0071BD] hover:text-[#3390ce] text-xl"
               }
             >
-              <button onClick={onCartClick}>
+              <button onClick={toggleCart}>
                 {totalQuantity > 0 && (
                   <span className='flex justify-center items-center text-sm w-4 h-4 bg-[#228B22] text-white ml-4 rounded-full'>
                     {totalQuantity}

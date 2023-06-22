@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 const ProductItem = ({ item, handleAddToCart }) => {
   const { pathname } = useLocation();
   const isSales = pathname.includes("sales");
-  console.log(item.id);
+
   return (
     <div
       key={item.id}

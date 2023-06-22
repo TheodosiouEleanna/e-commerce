@@ -1,10 +1,15 @@
-import React, { createContext, useReducer } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useReducer,
+} from "react";
 
 const initialState = {
-  cartItems: [],
+  cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
+  showCart: false,
   stickyNav: false,
 };
-
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -34,6 +39,16 @@ const cartReducer = (state, action) => {
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
+      };
+    case "GET_CART_ITEMS":
+      return {
+        ...state,
+        cartItems: action.payload,
+      };
+    case "TOGGLE_CART":
+      return {
+        ...state,
+        showCart: !state.showCart,
       };
     default:
       return state;
@@ -77,8 +92,29 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const toggleCart = useCallback(() => {
+    console.log("why do you run");
+    dispatch({ type: "TOGGLE_CART" });
+  }, []);
+
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      dispatch({
+        type: "GET_CART_ITEMS",
+        payload: JSON.parse(storedCartItems),
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+  }, [state.cartItems]);
+
   const cartContextValue = {
     cartItems: state.cartItems,
+    showCart: state.showCart,
+    toggleCart,
     addToCart,
     removeFromCart,
     increaseQuantity,
