@@ -12,7 +12,7 @@ export const Home = () => {
       <div className='flex mt-16 justify-center'>
         <MostPopular />
       </div>
-      <div className='flex mt-16 h-[65vh] justify-center'>
+      <div className='flex mt-16 h-[75vh] justify-center'>
         <Announcements />
       </div>
     </>

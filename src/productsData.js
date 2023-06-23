@@ -243,25 +243,25 @@ export const announcements = [
     description:
       "At our core, we believe in harnessing the power of nature to create effective and sustainable skincare solutions. We carefully select botanical extracts, plant oils, and essential oils known for their beneficial properties, ensuring that each product is both effective and safe for your skin.",
   },
-  //   {
-  //     id: 4,
-  //     title: "Cruelty-Free and Environmentally Conscious",
-  //     image: "/images/photo-6.jpg",
-  //     description:
-  //       "We are committed to cruelty-free practices and never test our products on animals. Additionally, we strive to minimize our environmental footprint by using eco-friendly packaging materials and supporting sustainable sourcing practices.",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "Join Our Skincare Community",
-  //     image: "/images/photo-6.jpg",
-  //     description:
-  //       "We invite you to join our skincare community and embark on a journey to healthier, more radiant skin. Stay tuned for exciting updates, exclusive offers, and expert skincare tips from our team of natural beauty enthusiasts.",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "Experience the Difference",
-  //     image: "/images/photo-6.jpg",
-  //     description:
-  //       "Experience the transformative power of natural skincare. Explore our range of products and discover the joy of healthy, glowing skin. Shop online or visit our store to experience the difference of our natural skincare line.",
-  //   },
+  {
+    id: 4,
+    title: "Cruelty-Free and Environmentally Conscious",
+    image: "/images/photo-13.jpg",
+    description:
+      "We are committed to cruelty-free practices and never test our products on animals. Additionally, we strive to minimize our environmental footprint by using eco-friendly packaging materials and supporting sustainable sourcing practices.",
+  },
+  {
+    id: 5,
+    title: "Join Our Skincare Community",
+    image: "/images/photo-14.jpg",
+    description:
+      "We invite you to join our skincare community and embark on a journey to healthier, more radiant skin. Stay tuned for exciting updates, exclusive offers, and expert skincare tips from our team of natural beauty enthusiasts.",
+  },
+  {
+    id: 6,
+    title: "Experience the Difference",
+    image: "/images/photo-12.jpg",
+    description:
+      "Experience the transformative power of natural skincare. Explore our range of products and discover the joy of healthy, glowing skin. Shop online or visit our store to experience the difference of our natural skincare line.",
+  },
 ];
