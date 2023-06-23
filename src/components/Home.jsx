@@ -1,17 +1,9 @@
 import React from "react";
 import { Announcements } from "./Announcements";
 import HeroGrid from "./HeroGrid";
+import Footer from "./Footer";
 
 export const Home = () => {
-  // ! FOR DIMOS
-  // Todo: Create a mock list of products
-  // Todo: Create grid of products
-  // Todo: Make a Card component to have show an image of products and details: category, name, unique code
-  //   Todo: You could also create the contact form in the end of the home page
-
-  //   !FOR ELEANNA
-  // Todo: Debounce with loader for search
-  //   Todo: Add the review functionality (0-5 stars)
   return (
     <>
       <div className={`flex justify-center mt-4 `}>
@@ -25,6 +17,7 @@ export const Home = () => {
       <div className='flex mt-16 justify-center'>
         <Announcements />
       </div>
+      <Footer />
     </>
   );
 };

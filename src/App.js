@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import ProductPage from "./components/ProductPage";
 import ProductsList from "./components/ProductsList";
 import { CartContext } from "./context/CartContext";
+import { Announcements } from "./components/Announcements";
+import { AnnouncementsPage } from "./components/AnnouncementsPage";
 
 function App() {
   const { showCart } = useContext(CartContext);
@@ -23,7 +25,7 @@ function App() {
         <Route path='products' element={<ProductsList />} />
         <Route path='products/:id' element={<ProductPage />} />
         <Route path='sales' element={<ProductsList />} />
-        <Route path='announcements' element={<Home />} />
+        <Route path='announcements' element={<AnnouncementsPage />} />
         <Route path='checkout' element={<CheckoutPage />} />
       </Routes>
     </>
