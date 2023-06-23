@@ -11,10 +11,12 @@ const CartModal = () => {
   const modalRef = useRef(null);
   const [initialized, setInitialized] = useState(false);
 
-  const totalAmount = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const totalAmount = cartItems.reduce((total, item) => {
+    const itemPrice = item.sale
+      ? item.price - (Math.floor(Math.random() * 11) + 5)
+      : item.price;
+    return total + itemPrice * item.quantity;
+  }, 0);
 
   const totalQuantity = cartItems.reduce((total, item) => {
     return total + item.quantity;

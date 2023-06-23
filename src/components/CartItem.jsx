@@ -25,9 +25,20 @@ const CartItem = ({ item, key }) => {
               {item.name}
             </h3>
           </Link>
-          <p className='text-sm text-gray-500'>
+          <p className='text-sm '>
             Price:
-            <span className='font-bold text-[#0071BD]'> {item.price}</span>
+            {item.sale ? (
+              <>
+                <span className='font-bold ml-2 line-through'>
+                  {item.price}$
+                </span>
+                <span className='font-bold ml-2 text-[#228B22]'>
+                  {item.price - (Math.floor(Math.random() * 11) + 5)}$
+                </span>
+              </>
+            ) : (
+              <span className='font-bold text-[#0071BD]'> {item.price}</span>
+            )}
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Announcements } from "./Announcements";
 import HeroGrid from "./HeroGrid";
-import Footer from "./Footer";
+import MostPopular from "./MostPopular";
 
 export const Home = () => {
   return (
@@ -10,14 +10,11 @@ export const Home = () => {
         <HeroGrid />
       </div>
       <div className='flex mt-16 justify-center'>
-        <div className='xl:w-[60%] md:w-[80%] h-96'>
-          <h2 className='text-xl font-bold text-[#0071BD]'>Most popular</h2>
-        </div>
+        <MostPopular />
       </div>
-      <div className='flex mt-16 justify-center'>
+      <div className='flex mt-16 h-[65vh] justify-center'>
         <Announcements />
       </div>
-      <Footer />
     </>
   );
 };

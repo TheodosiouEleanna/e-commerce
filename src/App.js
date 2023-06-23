@@ -9,6 +9,7 @@ import ProductsList from "./components/ProductsList";
 import { CartContext } from "./context/CartContext";
 import { Announcements } from "./components/Announcements";
 import { AnnouncementsPage } from "./components/AnnouncementsPage";
+import Footer from "./components/Footer";
 
 function App() {
   const { showCart } = useContext(CartContext);
@@ -28,6 +29,7 @@ function App() {
         <Route path='announcements' element={<AnnouncementsPage />} />
         <Route path='checkout' element={<CheckoutPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

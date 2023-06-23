@@ -4,11 +4,14 @@ import { Link, useLocation } from "react-router-dom";
 const ProductItem = ({ item, handleAddToCart }) => {
   const { pathname } = useLocation();
   const isSales = pathname.includes("sales");
+  const isProducts = pathname.includes("product");
 
   return (
     <div
       key={item.id}
-      className='m-2 p-4 pt-0 flex flex-col h-[23rem] border bg-[#FFFFFF] border-[#E9E9E9] hover:border-[#228B22]'
+      className={`m-2 p-4 pt-0 flex flex-col ${
+        isProducts ? "h-[23rem]" : "h-[20rem]"
+      } border bg-[#FFFFFF] border-[#E9E9E9] hover:border-[#228B22]`}
     >
       <Link to={`/products/${item.id}`}>
         <div className='flex justify-center h-[14rem] relative'>
@@ -40,20 +43,22 @@ const ProductItem = ({ item, handleAddToCart }) => {
           </div>
         </div>
       </Link>
-      <div className='flex justify-around mt-8'>
-        <button
-          className=' w-24 border bg-[#E9E9E9] text-sm font-bold hover:bg-[#228B22] hover:text-white'
-          onClick={() => handleAddToCart(item)}
-        >
-          Add to Cart
-        </button>
-        <button
-          className='w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
-          onClick={() => {}}
-        >
-          Details
-        </button>
-      </div>
+      {isProducts && (
+        <div className='flex justify-around mt-8'>
+          <button
+            className=' w-24 border bg-[#E9E9E9] text-sm font-bold hover:bg-[#228B22] hover:text-white'
+            onClick={() => handleAddToCart(item)}
+          >
+            Add to Cart
+          </button>
+          <button
+            className='w-24 border bg-[#E9E9E9] text-base font-bold hover:bg-[#228B22] hover:text-white'
+            onClick={() => {}}
+          >
+            Details
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -12,7 +12,7 @@ export const Announcements = () => {
     });
   };
   return (
-    <div className='flex flex-col items-center xl:w-[60%] md:w-[80%] bg-[#E9E9E9] mb-48'>
+    <div className='flex flex-col items-center xl:w-[60%] md:w-[80%] bg-[#E9E9E9] mt-20'>
       <div className='flex pt-6 px-8'>
         {announcements.map((ann, index) => {
           return (
@@ -54,7 +54,7 @@ export const Announcements = () => {
         })}
       </div>
       <Link to='/announcements' onClick={() => scrollToTop()}>
-        <button className='p-2 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-xl hover:bg-[#228B22] hover:text-white'>
+        <button className='px-4 py-2 m-8 w-48 border-2 border-white text-[#3390ce] font-bold text-lg hover:bg-[#228B22] hover:text-white'>
           Learn More
         </button>
       </Link>
