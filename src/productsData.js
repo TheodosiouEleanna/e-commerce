@@ -1,4 +1,4 @@
-export const products = [
+export const initialData = [
   {
     id: 1,
     name: "Organic Lavender Hand Soap",
@@ -265,3 +265,8 @@ export const announcements = [
       "Experience the transformative power of natural skincare. Explore our range of products and discover the joy of healthy, glowing skin. Shop online or visit our store to experience the difference of our natural skincare line.",
   },
 ];
+
+export const products = initialData.map((product) => ({
+  ...product,
+  code: `${product.id}-${product.name.replaceAll(" ", "-").toLowerCase()}`,
+}));

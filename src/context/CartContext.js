@@ -50,6 +50,12 @@ const cartReducer = (state, action) => {
         ...state,
         showCart: !state.showCart,
       };
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cartItems: [],
+      };
+
     default:
       return state;
   }
@@ -92,6 +98,10 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
   const toggleCart = useCallback(() => {
     console.log("why do you run");
     dispatch({ type: "TOGGLE_CART" });
@@ -116,6 +126,7 @@ export const CartProvider = ({ children }) => {
     showCart: state.showCart,
     toggleCart,
     addToCart,
+    clearCart,
     removeFromCart,
     increaseQuantity,
     decreaseQuantity,

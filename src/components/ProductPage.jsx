@@ -27,7 +27,7 @@ const ProductPage = () => {
             <img
               src={product.image}
               alt='Product'
-              className='object-cover w-[600px] h-[500px]'
+              className='object-cover w-[600px] h-full'
             />
           </div>
           <div className='w-1/2 p-10 '>

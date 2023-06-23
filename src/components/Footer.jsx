@@ -79,6 +79,7 @@ const Footer = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit} className='w-full lg:w-[30%] mx-10'>
+            <h2 className='text-lg font-bold mb-6'>Contact</h2>
             <input
               className='mb-8 w-2/3 p-1 text-gray-500 focus:border focus:border-[#228B22] focus:outline-none'
               type='text'
@@ -118,11 +119,11 @@ const Footer = () => {
       </footer>
       <div className='h-28 bg-[#3390ce] flex justify-center items-center'>
         <div className='text-center text-white font-bold'>
-          <p>Design by Eleanna</p>
+          {/* <p>Design by Eleanna</p> */}
         </div>
       </div>
       {showSnackbar && (
-        <div className='bg-[#228B22] text-white px-4 py-2 absolute bottom-4 left-1/2 transform -translate-x-1/2'>
+        <div className='bg-[#228B22] text-white px-4 py-2 fixed bottom-4 left-1/2 transform -translate-x-1/2'>
           Your message was submitted!
         </div>
       )}

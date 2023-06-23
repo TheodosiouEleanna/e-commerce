@@ -10,7 +10,7 @@ const ProductItem = ({ item, handleAddToCart }) => {
     <div
       key={item.id}
       className={`m-2 p-4 pt-0 flex flex-col ${
-        isProducts ? "h-[23rem]" : "h-[20rem]"
+        isProducts || isSales ? "h-[23rem]" : "h-[20rem]"
       } border bg-[#FFFFFF] border-[#E9E9E9] hover:border-[#228B22]`}
     >
       <Link to={`/products/${item.id}`}>
@@ -43,7 +43,7 @@ const ProductItem = ({ item, handleAddToCart }) => {
           </div>
         </div>
       </Link>
-      {isProducts && (
+      {(isProducts || isSales) && (
         <div className='flex justify-around mt-8'>
           <button
             className=' w-24 border bg-[#E9E9E9] text-sm font-bold hover:bg-[#228B22] hover:text-white'
