@@ -1,4 +1,4 @@
-E-commerce app for an assignment, inspired by this : https://minimalist-e-commerce.vercel.app/
+E-commerce app developed in a week for an assignment, inspired by this : https://minimalist-e-commerce.vercel.app/
 
 # Getting Started with Create React App
 
