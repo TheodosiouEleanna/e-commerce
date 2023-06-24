@@ -84,7 +84,6 @@ const CheckoutPage = () => {
   }, 0);
 
   const onChangeInput = (e, field) => {
-    console.log(e.target.value);
     if (e.target.value === "Transport with delivery") {
       setCheckoutInfo({
         ...checkoutInfo,

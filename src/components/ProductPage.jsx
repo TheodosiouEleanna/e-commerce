@@ -12,9 +12,7 @@ const ProductPage = () => {
 
   const { increaseQuantity, decreaseQuantity, addToCart, cartItems } =
     useContext(CartContext);
-  console.log({ cartItems });
   const cartItem = cartItems?.find((item) => item?.id.toString() === id);
-  console.log({ cartItem, cartItems });
 
   return (
     <div className='flex justify-center items-center w-full h-full mt-10'>

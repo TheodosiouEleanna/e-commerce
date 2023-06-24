@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 
 const initialFormInfo = {
@@ -24,8 +25,6 @@ const Footer = () => {
       setShowSnackbar(false);
     }, 2000);
   };
-
-  console.log(formInfo, formInfo.message.length);
 
   return (
     <>

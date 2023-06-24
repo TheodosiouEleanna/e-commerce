@@ -24,8 +24,6 @@ const CartModal = () => {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      console.log({ eventTarget: event.target });
-      console.log({ modalRef });
       if (
         modalRef.current !== null &&
         !modalRef.current.contains(event.target) &&

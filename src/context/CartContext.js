@@ -103,7 +103,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const toggleCart = useCallback(() => {
-    console.log("why do you run");
     dispatch({ type: "TOGGLE_CART" });
   }, []);
 
