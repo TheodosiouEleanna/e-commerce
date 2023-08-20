@@ -1,5 +1,9 @@
 E-commerce app developed in a week for an assignment, inspired by this : https://minimalist-e-commerce.vercel.app/
 
+
+https://e-commerce-weld-chi.vercel.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
